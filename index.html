@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ludo by Elpis</title>
+
+  <meta name="description" content="Ludo is a strategy board game for two or more players in which the players race their four chips/tokens from start to finish according to the spinns of two spinners.
+  Elpis presents to you Ludo">
+
+  <meta name='robots' content='index,follow'>
+
+  <meta name="theme-color" content="#30649d">
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <link rel="apple-touch-icon" href="/logo192.png" />
+
+  <link rel="manifest" href="/manifest.json" />
+
+  <link rel="stylesheet" href="base/style.css">
+
+  <script defer src="base/app.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="app.js"></script>
+
+  <style id="board-colors-A"></style>
+
+  <style id="board-colors-B"></style>
+
+  <style id="board-colors-C"></style>
+
+  <style id="board-colors-D"></style>
+
+  <style id="board-colors-BBM"></style>
+
+  <link rel="stylesheet" href="base/svg.css">
+
+</head>
+
+<body>
+
+  <div class="big-wrapper">
+
+    <div class="site-topper">
+
+      <nav>
+
+        <h1>Ludo</h1>
+
+        <ul>
+
+          <li><a href="" id="link-new">New</a></li>
+
+          <li><a href="" id="link-exit">Exit</a></li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+    <main>
+
+      <div class="main-content">
+
+        <div class="board-holder">
+
+          <div class="board">
+
+            <div class="board-base-message">
+
+              <div class="BBM-board-text"></div>
+
+              <div class="BBM-board-values"></div>
+
+            </div>
+
+            <!-- All Chip Bases -->
+            <div class="base base-A">
+
+              <div class="inner-base">
+
+                <div class="player-profile">
+
+                  <img src="" alt="">
+
+                </div>
+
+                <div class="holding-cells">
+
+                  <div class="holder">
+
+                    <div class="chip chip-A" id="chip-A-1"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-A" id="chip-A-2"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-A" id="chip-A-3"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-A" id="chip-A-4"></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="player-name"></div>
+
+              <div class="player-text"></div>
+
+            </div>
+
+            <div class="base base-B">
+
+              <div class="inner-base">
+
+                <div class="player-profile">
+
+                  <img src="" alt="">
+
+                </div>
+
+                <div class="holding-cells">
+
+                  <div class="holder">
+
+                    <div class="chip chip-B" id="chip-B-1"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-B" id="chip-B-2"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-B" id="chip-B-3"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-B" id="chip-B-4"></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="player-name"></div>
+
+              <div class="player-text"></div>
+
+            </div>
+
+            <div class="base base-C">
+
+              <div class="inner-base">
+
+                <div class="player-profile">
+
+                  <img src="" alt="">
+
+                </div>
+
+                <div class="holding-cells">
+
+                  <div class="holder">
+
+                    <div class="chip chip-C" id="chip-C-1"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-C" id="chip-C-2"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-C" id="chip-C-3"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-C" id="chip-C-4"></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="player-name"></div>
+
+              <div class="player-text"></div>
+
+            </div>
+
+            <div class="base base-D">
+
+              <div class="inner-base">
+
+                <div class="player-profile">
+
+                  <img src="" alt="">
+
+                </div>
+
+                <div class="holding-cells">
+
+                  <div class="holder">
+
+                    <div class="chip chip-D" id="chip-D-1"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-D" id="chip-D-2"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-D" id="chip-D-3"></div>
+
+                  </div>
+
+                  <div class="holder">
+
+                    <div class="chip chip-D" id="chip-D-4"></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="player-name"></div>
+
+              <div class="player-text"></div>
+
+            </div>
+
+            <!-- All Basic Tracks -->
+            <div data-track="1" class="track track-1"></div>
+
+            <div data-track="2" class="track track-2"></div>
+
+            <div data-track="3" class="track track-3"></div>
+
+            <div data-track="4" class="track track-4"></div>
+
+            <div data-track="5" class="track track-5"></div>
+
+            <div data-track="6" class="track track-6"></div>
+
+            <div data-track="7" class="track track-7"></div>
+
+            <div data-track="8" class="track track-8"></div>
+
+            <div data-track="9" class="track track-9"></div>
+
+            <div data-track="10" class="track track-10"></div>
+
+            <div data-track="11" class="track track-11"></div>
+
+            <div data-track="12" class="track track-12"></div>
+
+            <div data-track="13" class="track track-13"></div>
+
+            <div data-track="14" class="track track-14"></div>
+
+            <div data-track="15" class="track track-15"></div>
+
+            <div data-track="16" class="track track-16"></div>
+
+            <div data-track="17" class="track track-17"></div>
+
+            <div data-track="18" class="track track-18"></div>
+
+            <div data-track="19" class="track track-19"></div>
+
+            <div data-track="20" class="track track-20"></div>
+
+            <div data-track="21" class="track track-21"></div>
+
+            <div data-track="22" class="track track-22"></div>
+
+            <div data-track="23" class="track track-23"></div>
+
+            <div data-track="24" class="track track-24"></div>
+
+            <div data-track="25" class="track track-25"></div>
+
+            <div data-track="26" class="track track-26"></div>
+
+            <div data-track="27" class="track track-27"></div>
+
+            <div data-track="28" class="track track-28"></div>
+
+            <div data-track="29" class="track track-29"></div>
+
+            <div data-track="30" class="track track-30"></div>
+
+            <div data-track="31" class="track track-31"></div>
+
+            <div data-track="32" class="track track-32"></div>
+
+            <div data-track="33" class="track track-33"></div>
+
+            <div data-track="34" class="track track-34"></div>
+
+            <div data-track="35" class="track track-35"></div>
+
+            <div data-track="36" class="track track-36"></div>
+
+            <div data-track="37" class="track track-37"></div>
+
+            <div data-track="38" class="track track-38"></div>
+
+            <div data-track="39" class="track track-39"></div>
+
+            <div data-track="40" class="track track-40"></div>
+
+            <div data-track="41" class="track track-41"></div>
+
+            <div data-track="42" class="track track-42"></div>
+
+            <div data-track="43" class="track track-43"></div>
+
+            <div data-track="44" class="track track-44"></div>
+
+            <div data-track="45" class="track track-45"></div>
+
+            <div data-track="46" class="track track-46"></div>
+
+            <div data-track="47" class="track track-47"></div>
+
+            <div data-track="48" class="track track-48"></div>
+
+            <div data-track="49" class="track track-49"></div>
+
+            <div data-track="50" class="track track-50"></div>
+
+            <div data-track="51" class="track track-51"></div>
+
+            <div data-track="52" class="track track-52"></div>
+
+            <!-- All Home Tracks -->
+            <div data-track="A-1" class="home-track-A home-track-A-1"></div>
+            <div data-track="A-2" class="home-track-A home-track-A-2"></div>
+            <div data-track="A-3" class="home-track-A home-track-A-3"></div>
+            <div data-track="A-4" class="home-track-A home-track-A-4"></div>
+            <div data-track="A-5" class="home-track-A home-track-A-5"></div>
+            <div data-track="A-6" class="home-track-A home-track-A-6"></div>
+
+            <div data-track="B-1" class="home-track-B home-track-B-1"></div>
+            <div data-track="B-2" class="home-track-B home-track-B-2"></div>
+            <div data-track="B-3" class="home-track-B home-track-B-3"></div>
+            <div data-track="B-4" class="home-track-B home-track-B-4"></div>
+            <div data-track="B-5" class="home-track-B home-track-B-5"></div>
+            <div data-track="B-6" class="home-track-B home-track-B-6"></div>
+
+            <div data-track="C-1" class="home-track-C home-track-C-1"></div>
+            <div data-track="C-2" class="home-track-C home-track-C-2"></div>
+            <div data-track="C-3" class="home-track-C home-track-C-3"></div>
+            <div data-track="C-4" class="home-track-C home-track-C-4"></div>
+            <div data-track="C-5" class="home-track-C home-track-C-5"></div>
+            <div data-track="C-6" class="home-track-C home-track-C-6"></div>
+
+            <div data-track="D-1" class="home-track-D home-track-D-1"></div>
+            <div data-track="D-2" class="home-track-D home-track-D-2"></div>
+            <div data-track="D-3" class="home-track-D home-track-D-3"></div>
+            <div data-track="D-4" class="home-track-D home-track-D-4"></div>
+            <div data-track="D-5" class="home-track-D home-track-D-5"></div>
+            <div data-track="D-6" class="home-track-D home-track-D-6"></div>
+
+            <div class="home-end-triangle home-end-triangle-A">
+              <div></div>
+            </div>
+            <div class="home-end-triangle home-end-triangle-B">
+              <div></div>
+            </div>
+            <div class="home-end-triangle home-end-triangle-C">
+              <div></div>
+            </div>
+            <div class="home-end-triangle home-end-triangle-D">
+              <div></div>
+            </div>
+
+            <div class="winner-track-end">
+              <div></div>
+            </div>
+
+          </div>
+
+          <div class="die-btn-hol">
+
+            <button>Spin Me</button>
+
+          </div>
+
+          <div class="die-spinner">
+
+            <div class="left-spinner">
+
+              <div class="spinner-circle">
+
+                <div class="spinner-hand"></div>
+
+                <div class="spinner-value"></div>
+
+              </div>
+
+            </div>
+
+            <div class="right-spinner">
+
+              <div class="spinner-circle">
+
+                <div class="spinner-hand"></div>
+
+                <div class="spinner-value"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="start-game show">
+
+          <div class="welcome-phase show">
+
+            <div class="inner-content">
+
+              <div class="heading">
+
+                <h1>Welcome to Ludo</h1>
+
+              </div>
+
+              <div class="small-text">
+
+                <p> 
+
+                  Ludo is a strategy board game for two or more players in which the players race their four
+
+                  chips/tokens from start to finish according to the spinns of two spinners.
+
+                  <br>
+
+                  Elpis presents to you Ludo
+
+                </p>
+
+              </div>
+
+              <div class="options">
+
+                <button id="new-game">New Game</button>
+
+                <button id="continue-game">Continue Game</button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="number-players-phase">
+
+            <div class="inner-content">
+
+              <div class="num-ply">
+
+                <label for="gen">
+
+                  How many players do you wish to be involved
+
+                </label>
+
+                <div class="try-pack">
+
+                  <div>
+                    <label for="nx-two">Two</label>
+                    <input type="radio" id="nx-two" name="nxplx">
+                  </div>
+
+                  <div>
+                    <label for="nx-three">Three</label>
+                    <input type="radio" id="nx-three" name="nxplx">
+                  </div>
+
+                  <div>
+                    <label for="nx-four">Four</label>
+                    <input type="radio" id="nx-four" name="nxplx" checked="checked">
+                  </div>
+
+                </div>
+
+                <div class="nxt-btx">
+
+                  <button id="numb-ply-next">Next</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="player-input-phase" data-currentPlayer="1">
+
+            <div class="inner-content">
+
+              <div class="num-ply">
+
+                <div class="nox-phi">
+
+                  <img src="images/avatar/avatar03.png" title="Click Me" id="player-image">
+
+                </div>
+
+                <div class="namx-plx">
+
+                  <input type="text" id="player-name" value="Player">
+
+                </div>
+
+                <div class="namx-clcx">
+
+                  <input type="color" id="player-color">
+
+                </div>
+
+                <div class="namx-ishmn">
+
+                  <label for="isHuman">Human:</label>
+
+                  <input type="checkbox" name="hjd" id="isHuman">
+
+                </div>
+
+                <div class="nxt-btx">
+
+                  <button id="ply-inp-next">Next</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="safe-spot-phase">
+
+            <div class="inner-content">
+
+              <div class="num-ply">
+
+                <label for="gen">
+
+                  Game Safe Rule
+
+                </label>
+
+                <div class="try-pack">
+
+                  <div>
+                    <label for="nxsafe-any">Anywhere</label>
+                    <input type="radio" id="nxsafe-any" name="nxsafe">
+                  </div>
+
+                  <div>
+                    <label for="nxsafe-spe">Special</label>
+                    <input type="radio" id="nxsafe-spe" name="nxsafe" checked="checked">
+                  </div>
+
+                  <div>
+                    <label for="nxsafe-now">Nowhere</label>
+                    <input type="radio" id="nxsafe-now" name="nxsafe">
+                  </div>
+
+                </div>
+
+                <div class="nxt-btx">
+
+                  <button id="start-game">Start Game</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer>
+
+      <div class="site-footer">
+
+        <div>
+          &#169; 2020 Elpis. All rights reserved. Full Stack Web Developer
+        </div>
+
+        <div class="footer-svgs">
+
+          <div class="inside-foot-svgs">
+
+            <a href="tel:+2347051679479" target="_blank">
+
+              <i class="el-so-phone"></i>
+
+            </a>
+
+            <a href="http://wa.me/234741679479?text=Hello" target="_blank">
+
+              <i class="el-br-whatsapp"></i>
+
+            </a>
+
+            <a href="http://www.linkedin.om/in/gbolade-festus-olugboyega-8431631b9" target="_blank">
+
+              <i class="el-br-linkedin"></i>
+
+            </a>
+
+            <a href="mailto:elpis409@gmail.com?cc=wede@gmail.com&amp;body=Hello" target="_blank">
+
+
+              <i class="el-so-envelope"></i>
+
+            </a>
+
+            <a href="http://twitter.com/Elpis94950995" target="_blank">
+
+              <i class="el-br-twitter"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <a id="foot-contact"> Contact Me</a>
+
+      </div>
+
+    </footer>
+
+    <div class="site-background"></div>
+
+  </div>
+
+  <div class="mini-message-holder">
+
+    <div class="mini-message">
+
+      <div class="message-context"></div>
+
+    </div>
+
+  </div>
+
+  <div class="small-message-holder">
+
+    <div class="small-message">
+
+      <div class="message-context"></div>
+
+      <span class="cancel-x"><i class="js-crossx"></i></span>
+
+    </div>
+
+  </div>
+
+  <div class="normal-message-holder">
+
+    <div class="normal-message">
+
+      <div class="message-context"></div>
+
+      <span class="cancel-x"><i class="js-crossx"></i></span>
+
+    </div>
+
+  </div>
+
+  <div class="x-message-holder">
+
+    <div class="x-message">
+
+      <div class="message-context"></div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

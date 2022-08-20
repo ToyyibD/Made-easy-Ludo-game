@@ -1,0 +1,1186 @@
+div.big-wrapper{
+  background-image: url(images/004.jpeg);
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+div.site-topper > nav{
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.site-topper > nav h1{
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+div.site-topper > nav ul{
+  display: flex;
+  padding: 0 1rem;
+}
+
+div.site-topper > nav li{
+  list-style-type: none;
+}
+
+div.site-topper > nav li a{
+  padding: 0 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+div.main-content{
+  padding: 1rem;
+}
+
+@keyframes poppy {
+  0%{ transform: scale(1) }
+  25%{ transform: scale(.9) }
+  75%{ transform: scale(1.1) }
+  100%{ transform: scale(1) }
+}
+
+@keyframes poppyX {
+  0%{ background-color: blue;transform: scale(1) }
+  25%{ background-color: red;transform: scale(.9) }
+  75%{ background-color: orange;transform: scale(1.1) }
+  100%{ background-color: green;transform: scale(1) }
+}
+
+@keyframes poppy2 {
+  0%{ transform: scale(1) }
+  25%{ transform: scale(.8) }
+  75%{ transform: scale(1.2) }
+  100%{ transform: scale(1) }
+}
+
+@keyframes opacity-in {
+  0%{ opacity: 0 }
+  100%{ opacity: 1 }
+}
+
+div.board-holder{
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px 2px black;
+}
+
+div.board-holder.show{
+  display: flex;
+}
+
+div.board-holder > div.board{
+  background-color: rgba(0, 0, 0, 0.433);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67%;
+  grid-template-rows: 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% 6.25% ;
+}
+
+div.board-holder > div.board div.track{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.board-holder > div.board div.base{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+div.board-holder > div.board div[class|="home-track"]{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Spin Me Button */
+div.board-holder > div.die-btn-hol{
+  position: absolute;
+  top: 0; left: 0;
+  bottom: 0; right: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+div.board-holder > div.die-btn-hol.show{
+  display: flex;
+  z-index: 10;
+  animation: opacity-in 1 .5s;
+}
+
+div.board-holder > div.die-btn-hol button{
+  padding: 1rem;
+  min-width: 10%;
+  min-height: 10%;
+  max-width: 70%;
+  max-height: 70%;
+  height: 7rem; width: 7rem;
+  border: 0 none;
+  font-weight: bold;
+  outline: 0 none;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px black;
+  font-size: 1rem;
+  animation: poppyX 1s linear infinite;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow .5s;
+}
+
+div.board-holder > div.die-btn-hol button:hover{
+  box-shadow: 0 0 10px 4px black;
+}
+
+/* Spinners */
+div.board-holder > div.die-spinner{
+  position: absolute;
+  top: 0; left: 0;
+  bottom: 0; right: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+div.board-holder > div.die-spinner.show{
+  display: flex;
+  animation: opacity-in 1 .5s;
+}
+
+div.board-holder > div.die-spinner div.left-spinner,
+div.board-holder > div.die-spinner div.right-spinner{
+  width: 50%;
+  height: 100%;
+  padding: 2rem;
+}
+
+div.board-holder > div.die-spinner div.spinner-circle{
+  border: 8px solid white;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.board-holder > div.die-spinner div.spinner-circle div.spinner-hand{
+  opacity: 0;
+  height: 50%;
+  width: 8px;
+  background-color: white;
+  position: absolute;
+  left: calc(50% - 4px);
+  top: 0;
+  transform-origin: bottom;
+  transition: transform 2s, opacity .5s;
+}
+
+div.board-holder > div.die-spinner div.spinner-circle div.spinner-hand.show{
+  opacity: 1;
+}
+
+div.board-holder > div.die-spinner div.spinner-circle div.spinner-value{
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0; top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: white;
+  transition: opacity .5s;
+}
+
+div.board-holder > div.die-spinner div.spinner-circle div.spinner-value.show{
+  opacity: 1;
+}
+
+/* Board Track and Base Positions */
+
+div.board-holder > div.board div.board-base-message{
+  grid-column: 1 / 16;
+  grid-row: 16 / 17;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 0 none;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0 30px 4px inset;
+  transition: box-shadow .5s;
+}
+
+div.board-holder > div.board div.board-base-message div.BBM-board-text{
+  font-size: 1rem;
+  font-weight: bold;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 0 .5rem;
+}
+
+div.board-holder > div.board div.board-base-message div.BBM-board-values{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.board-holder > div.board div.board-base-message div.BBM-board-values div.BBMBV-die-value{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0 .3rem;
+  animation: poppy infinite .5s linear;
+  /* border: 3px dashed black; */
+  box-shadow: 0 0 3px 0 black;
+  cursor: pointer;
+  transition: border .5s, box-shadow .5s, background-color .5s, color .5s;
+}
+
+div.board-holder > div.board div.board-base-message div.BBM-board-values div.BBMBV-die-value:hover{
+  border: 1px solid black;
+}
+
+div.board-holder > div.board div.board-base-message div.BBM-board-values div.BBMBV-die-value.activated{
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  box-shadow: 0 0 3px 1px black;
+}
+
+div.board-holder > div.board div.base-A{
+  grid-column: 10 / 16;
+  grid-row: 10 / 16;
+}
+
+div.board-holder > div.board div.base-B{
+  grid-column: 1 / 7;
+  grid-row: 10 / 16;
+}
+
+div.board-holder > div.board div.base-C{
+  grid-column: 1 / 7;
+  grid-row: 1 / 7;
+}
+
+div.board-holder > div.board div.base-D{
+  grid-column: 10 / 16;
+  grid-row: 1 / 7;
+}
+
+div.board-holder > div.board div.track-1{
+  grid-column: 15 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-2{
+  grid-column: 14 / span 1;
+  grid-row: 9 / span 1;
+  background-image: url(images/star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-3{
+  grid-column: 13 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-4{
+  grid-column: 12 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-5{
+  grid-column: 11 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-6{
+  grid-column: 10 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-7{
+  grid-column: 9 / span 1;
+  grid-row: 10 / span 1;
+}
+
+div.board-holder > div.board div.track-8{
+  grid-column: 9 / span 1;
+  grid-row: 11 / span 1;
+}
+
+div.board-holder > div.board div.track-9{
+  grid-column: 9 / span 1;
+  grid-row: 12 / span 1;
+}
+
+div.board-holder > div.board div.track-10{
+  grid-column: 9 / span 1;
+  grid-row: 13 / span 1;
+  background-image: url(images/white_star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-11{
+  grid-column: 9 / span 1;
+  grid-row: 14 / span 1;
+}
+
+div.board-holder > div.board div.track-12{
+  grid-column: 9 / span 1;
+  grid-row: 15 / span 1;
+}
+
+div.board-holder > div.board div.track-13{
+  grid-column: 8 / span 1;
+  grid-row: 15 / span 1;
+}
+
+div.board-holder > div.board div.track-14{
+  grid-column: 7 / span 1;
+  grid-row: 15 / span 1;
+}
+
+div.board-holder > div.board div.track-15{
+  grid-column: 7 / span 1;
+  grid-row: 14 / span 1;
+  background-image: url(images/star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-16{
+  grid-column: 7 / span 1;
+  grid-row: 13 / span 1;
+}
+
+div.board-holder > div.board div.track-17{
+  grid-column: 7 / span 1;
+  grid-row: 12 / span 1;
+}
+
+div.board-holder > div.board div.track-18{
+  grid-column: 7 / span 1;
+  grid-row: 11 / span 1;
+}
+
+div.board-holder > div.board div.track-19{
+  grid-column: 7 / span 1;
+  grid-row: 10 / span 1;
+}
+
+div.board-holder > div.board div.track-20{
+  grid-column: 6 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-21{
+  grid-column: 5 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-22{
+  grid-column: 4 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-23{
+  grid-column: 3 / span 1;
+  grid-row: 9 / span 1;
+  background-image: url(images/white_star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-24{
+  grid-column: 2 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-25{
+  grid-column: 1 / span 1;
+  grid-row: 9 / span 1;
+}
+
+div.board-holder > div.board div.track-26{
+  grid-column: 1 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.track-27{
+  grid-column: 1 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-28{
+  grid-column: 2 / span 1;
+  grid-row: 7 / span 1;
+  background-image: url(images/star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-29{
+  grid-column: 3 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-30{
+  grid-column: 4 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-31{
+  grid-column: 5 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-32{
+  grid-column: 6 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-33{
+  grid-column: 7 / span 1;
+  grid-row: 6 / span 1;
+}
+
+div.board-holder > div.board div.track-34{
+  grid-column: 7 / span 1;
+  grid-row: 5 / span 1;
+}
+
+div.board-holder > div.board div.track-35{
+  grid-column: 7 / span 1;
+  grid-row: 4 / span 1;
+}
+
+div.board-holder > div.board div.track-36{
+  grid-column: 7 / span 1;
+  grid-row: 3 / span 1;
+  background-image: url(images/white_star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-37{
+  grid-column: 7 / span 1;
+  grid-row: 2 / span 1;
+}
+
+div.board-holder > div.board div.track-38{
+  grid-column: 7 / span 1;
+  grid-row: 1 / span 1;
+}
+
+div.board-holder > div.board div.track-39{
+  grid-column: 8 / span 1;
+  grid-row: 1 / span 1;
+}
+
+div.board-holder > div.board div.track-40{
+  grid-column: 9 / span 1;
+  grid-row: 1 / span 1;
+}
+
+div.board-holder > div.board div.track-41{
+  grid-column: 9 / span 1;
+  grid-row: 2 / span 1;
+  background-image: url(images/star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-42{
+  grid-column: 9 / span 1;
+  grid-row: 3 / span 1;
+}
+
+div.board-holder > div.board div.track-43{
+  grid-column: 9 / span 1;
+  grid-row: 4 / span 1;
+}
+
+div.board-holder > div.board div.track-44{
+  grid-column: 9 / span 1;
+  grid-row: 5 / span 1;
+}
+
+div.board-holder > div.board div.track-45{
+  grid-column: 9 / span 1;
+  grid-row: 6 / span 1;
+}
+
+div.board-holder > div.board div.track-46{
+  grid-column: 10 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-47{
+  grid-column: 11 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-48{
+  grid-column: 12 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-49{
+  grid-column: 13 / span 1;
+  grid-row: 7 / span 1;
+  background-image: url(images/white_star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+div.board-holder > div.board div.track-50{
+  grid-column: 14 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-51{
+  grid-column: 15 / span 1;
+  grid-row: 7 / span 1;
+}
+
+div.board-holder > div.board div.track-52{
+  grid-column: 15 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-A-1{
+  grid-column: 14 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-A-2{
+  grid-column: 13 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-A-3{
+  grid-column: 12 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-A-4{
+  grid-column: 11 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-A-5{
+  grid-column: 10 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-A-6{
+  grid-column: 9 / span 1;
+  grid-row: 8 / span 1;
+  background-color: transparent;
+  border: 0 none;
+  z-index: 5;
+}
+
+div.board-holder > div.board div.home-track-B-1{
+  grid-column: 8 / span 1;
+  grid-row: 14 / span 1;
+}
+
+div.board-holder > div.board div.home-track-B-2{
+  grid-column: 8 / span 1;
+  grid-row: 13 / span 1;
+}
+
+div.board-holder > div.board div.home-track-B-3{
+  grid-column: 8 / span 1;
+  grid-row: 12 / span 1;
+}
+
+div.board-holder > div.board div.home-track-B-4{
+  grid-column: 8 / span 1;
+  grid-row: 11 / span 1;
+}
+
+div.board-holder > div.board div.home-track-B-5{
+  grid-column: 8 / span 1;
+  grid-row: 10 / span 1;
+}
+
+div.board-holder > div.board div.home-track-B-6{
+  grid-column: 8 / span 1;
+  grid-row: 9 / span 1;
+  background-color: transparent;
+  border: 0 none;
+  z-index: 5;
+}
+
+div.board-holder > div.board div.home-track-C-1{
+  grid-column: 2 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-C-2{
+  grid-column: 3 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-C-3{
+  grid-column: 4 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-C-4{
+  grid-column: 5 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-C-5{
+  grid-column: 6 / span 1;
+  grid-row: 8 / span 1;
+}
+
+div.board-holder > div.board div.home-track-C-6{
+  grid-column: 7 / span 1;
+  grid-row: 8 / span 1;
+  background-color: transparent;
+  border: 0 none;
+  z-index: 5;
+}
+
+div.board-holder > div.board div.home-track-D-1{
+  grid-column: 8 / span 1;
+  grid-row: 2 / span 1;
+}
+
+div.board-holder > div.board div.home-track-D-2{
+  grid-column: 8 / span 1;
+  grid-row: 3 / span 1;
+}
+
+div.board-holder > div.board div.home-track-D-3{
+  grid-column: 8 / span 1;
+  grid-row: 4 / span 1;
+}
+
+div.board-holder > div.board div.home-track-D-4{
+  grid-column: 8 / span 1;
+  grid-row: 5 / span 1;
+}
+
+div.board-holder > div.board div.home-track-D-5{
+  grid-column: 8 / span 1;
+  grid-row: 6 / span 1;
+}
+
+div.board-holder > div.board div.home-track-D-6{
+  grid-column: 8 / span 1;
+  grid-row: 7 / span 1;
+  background-color: transparent;
+  border: 0 none;
+  z-index: 5;
+}
+
+div.board-holder > div.board div.home-end-triangle-A{
+  grid-column: 8 / span 2;
+  grid-row: 7 / span 3;
+  /* background-color: blue; */
+  overflow: hidden;
+  padding-left: 25%;
+}
+
+div.board-holder > div.board div.home-end-triangle-A > div{
+  position: absolute;
+  left: 25%; bottom: 50%;
+  width: 500%;
+  height: 500%;
+  transform: rotate(45deg);
+  transform-origin: 0 100%;
+}
+
+div.board-holder > div.board div.home-end-triangle-B{
+  grid-column: 7 / span 3;
+  grid-row: 8 / span 2;
+  overflow: hidden;
+}
+
+div.board-holder > div.board div.home-end-triangle-B > div{
+  position: absolute;
+  left: 50%; top: 25%;
+  width: 500%;
+  height: 500%;
+  transform: rotate(45deg);
+  transform-origin: 0 0%;
+}
+
+div.board-holder > div.board div.home-end-triangle-C{
+  grid-column: 7 / span 2;
+  grid-row: 7 / span 3;
+  overflow: hidden;
+}
+
+div.board-holder > div.board div.home-end-triangle-C > div{
+  position: absolute;
+  top: 50%; right: 25%;
+  width: 500%;
+  height: 500%;
+  transform: rotate(45deg);
+  transform-origin: 100% 0%;
+}
+
+div.board-holder > div.board div.home-end-triangle-D{
+  grid-column: 7 / span 3;
+  grid-row: 7 / span 2;
+  overflow: hidden;
+}
+
+div.board-holder > div.board div.home-end-triangle-D > div{
+  position: absolute;
+  right: 50%; bottom: 25%;
+  width: 500%;
+  height: 500%;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+div.board-holder > div.board div.winner-track-end{
+  grid-column: 8 / span 1;
+  grid-row: 8 / span 1;
+  /* background-image: url(images/black_crown.svg); */
+  background-color: black;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+div.board-holder > div.board div.winner-track-end div{
+  height: 100%; width: 100%;
+  background-image: url(images/crown.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+div.board-holder > div.board div.base{
+  display: grid;
+  grid-template-columns: 13.63% 18.18% 18.18% 18.18% 18.18% 13.63%;
+  grid-template-rows: 13.63% 18.18% 18.18% 18.18% 18.18% 13.63%;
+}
+
+div.board-holder > div.board div.inner-base{
+  width: 100%; height: 100%;
+  grid-column: 2 / span 4;
+  grid-row: 2 / span 4;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+div.board-holder > div.board div.inner-base div.player-profile img{
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 15%;
+  box-shadow: 0 0 3px 1px black;
+}
+
+div.board-holder > div.board div.inner-base div.player-profile{
+  grid-column: 1 / 5;
+  grid-row: 1 / 5;
+}
+
+div.board-holder > div.board div.base div.player-name{
+  height: 100%;
+  text-overflow: ellipsis;
+  font-size: .7rem;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+div.board-holder > div.board div.base div.player-text{
+  height: 100%;
+  font-size: .7rem;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  /* text-align: right; */
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+div.board-holder > div.board div.base-A div.player-name{
+  grid-column: 2 / span 4;
+  grid-row: 6 / span 1;
+}
+
+div.board-holder > div.board div.base-A div.player-text{
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 1;
+}
+
+div.board-holder > div.board div.base-B div.player-name{
+  grid-column: 2 / span 4;
+  grid-row: 6 / span 1;
+}
+
+div.board-holder > div.board div.base-B div.player-text{
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 1;
+}
+
+div.board-holder > div.board div.base-C div.player-name{
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 1;
+}
+
+div.board-holder > div.board div.base-C div.player-text{
+  grid-column: 2 / span 4;
+  grid-row: 6 / span 1;
+}
+
+div.board-holder > div.board div.base-D div.player-name{
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 1;
+}
+
+div.board-holder > div.board div.base-D div.player-text{
+  grid-column: 2 / span 4;
+  grid-row: 6 / span 1;
+}
+
+div.board-holder > div.board div.inner-base div.holding-cells{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+div.board-holder > div.board div.base-A div.inner-base div.holding-cells{
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+
+div.board-holder > div.board div.base-B div.inner-base div.holding-cells{
+  grid-column: 3 / 5;
+  grid-row: 3 / 5;
+}
+
+div.board-holder > div.board div.base-C div.inner-base div.holding-cells{
+  grid-column: 1 / 3;
+  grid-row: 3 / 5;
+}
+
+div.board-holder > div.board div.base-D div.inner-base div.holding-cells{
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+div.board-holder > div.board div.inner-base div.holding-cells .holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.board-holder > div.board div div.chip{
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  box-shadow: 0 0 3px 1px black;
+}
+
+div.board-holder > div.board div.two-chips div.chip{
+  width: 30%;
+  height: 30%;
+  margin: 10%;
+}
+
+div.board-holder > div.board div.three-chips div.chip{
+  width: 30%;
+  height: 30%;
+  margin: 10%;
+}
+
+div.board-holder > div.board div.four-chips div.chip{
+  width: 20%;
+  height: 20%;
+  margin: 10%;
+}
+
+div.board-holder > div.board div.five-chips div.chip{
+  width: 20%;
+  height: 20%;
+  margin: 5%;
+}
+
+div.board-holder > div.board div.six-chips div.chip{
+  width: 20%;
+  height: 20%;
+  margin: 5%;
+}
+
+div.board-holder > div.board div.ten-chips div.chip{
+  width: 10%;
+  height: 10%;
+  margin: 2.5%;
+}
+
+div.board-holder > div.board div div.chip.poppy{
+  animation: poppy2 infinite .5s linear;
+  cursor: pointer;
+  box-shadow: 0 0 4px 2px black;
+}
+
+div.start-game{
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  /* background-color: grey; */
+  overflow: auto;
+}
+
+div.start-game.show{
+  display: flex;
+}
+
+div.start-game > div[class*="-phase"]{
+  display: none;
+}
+
+div.start-game > div[class*="-phase"].show{
+  display: flex;
+}
+
+div.start-game > div[class*="-phase"]{
+  background-color: white;
+  max-width: 500px;
+  width: 80%;
+  max-height: 90%;
+  margin: auto;
+  overflow: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 5px 2px;
+  align-items: center;
+  flex-direction: column;
+  animation: colorx 4s infinite;
+}
+
+div.start-game > div[class*="-phase"] .inner-content{
+  padding: 1rem;
+  margin: auto;
+  text-align: center;
+}
+
+@keyframes colorx{
+  0%{background-color: lightgreen;}
+  25%{background-color: lightblue;}
+  50%{background-color: lightsteelblue;}
+  100%{background-color: lightgreen;}
+}
+
+@keyframes rotorx{
+  0%{ transform: rotate(0deg); }
+  25%{ transform: rotate(10deg); }
+  75%{ transform: rotate(-10deg); }
+  100%{ transform: rotate(0deg); }
+}
+
+div.start-game div.welcome-phase .inner-content div.heading{
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  padding: .5rem 0;
+}
+
+div.start-game div.welcome-phase .inner-content div.small-text{
+  font-size: .8rem;
+  padding-bottom: .5rem;
+}
+
+div.start-game div.welcome-phase .inner-content div.options button{
+  background-color: transparent;
+  border: 0 none; outline: 0 none;
+  display: inline-block;
+  width: 55%;
+  margin: .5rem;
+  box-shadow: 0 0 3px 1px;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: box-shadow .5s, background-color .5s;
+}
+
+div.start-game div.welcome-phase .inner-content div.options button:hover{
+  box-shadow: 0 0 3px 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+div.start-game > div[class*="-phase"] .inner-content .num-ply label[for="gen"]{
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: .5rem 0;
+  display: block;
+}
+
+div.start-game > div[class*="-phase"] .inner-content .num-ply .try-pack{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+div.start-game > div[class*="-phase"] .inner-content .num-ply .try-pack > div{
+  display: inline-block;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.start-game > div[class*="-phase"] .inner-content .num-ply .try-pack > div label{
+  margin-right: .3rem;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.nxt-btx button{
+  background-color: transparent;
+  border: 0 none; outline: 0 none;
+  display: inline-block;
+  width: 60%;
+  margin: .5rem;
+  box-shadow: 0 0 3px 1px;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: box-shadow .5s, background-color .5s;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.nxt-btx button:hover{
+  box-shadow: 0 0 3px 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.nox-phi{
+  width: 50%;
+  max-width: 300px;
+  border-radius: 50%;
+  margin: .5rem auto;
+  box-shadow: 0 0 5px 0;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.nox-phi img{
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.nox-phi img:hover{
+  animation: rotorx .3s infinite linear;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.namx-plx input{
+  padding: .2rem .5rem;
+  box-shadow: 0 0 3px 0px;
+  width: 100%;
+  outline: 0 none; border: 0 none;
+  border-radius: .5rem;
+  text-align: center;
+  margin-bottom: .5rem;
+  transition: box-shadow .5s;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.namx-plx input:focus{
+  box-shadow: 0 0 6px 0px;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.namx-clcx{
+  display: flex;
+  width: 50%;
+  margin: .5rem auto;
+  box-shadow: 0 0 3px 0px;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.namx-clcx:hover,
+div.start-game > div[class*="-phase"] .inner-content div.namx-clcx:focus{
+  box-shadow: 0 0 6px 0px;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.namx-clcx input{
+  width: 100%;
+  opacity: 0;
+  -webkit-opacity: 0;
+  cursor: pointer;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.namx-ishmn{
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.start-game > div[class*="-phase"] .inner-content div.namx-ishmn label{
+  padding-right: .2rem;
+}
+
+label{
+  cursor: pointer;
+}
